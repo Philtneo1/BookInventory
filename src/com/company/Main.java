@@ -12,6 +12,7 @@ import java.util.Scanner;
     public String name = "hello";
     public String author = "";
     public int page = 0;
+    System.out.println("Hello World");
     }
 
 
