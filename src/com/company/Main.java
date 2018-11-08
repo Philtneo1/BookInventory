@@ -42,7 +42,7 @@ public class Main {
                         counter++;
                         break;
                 case 4:
-                    System.out.println("Class removing a book");
+                    System.out.println("Class removing a book!");
                     break;
                 case 5:
                     System.out.println("There are currently " + counter + " books in the inventory");
