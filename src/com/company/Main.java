@@ -16,22 +16,6 @@ public class Main {
 
 
 
-    public static void displayInventory(Book[] myList, int counter){
-        System.out.println("***************************");
-        for(int i = 0; i < counter; i++) {
-            System.out.println("");
-            System.out.println("Book Name: " + myList[i].name);
-            System.out.println("Author: " + myList[i].author);
-            System.out.println("Pages: " + myList[i].page);
-            System.out.println("");
-
-        }
-        System.out.println("***************************");
-        return;
-
-    }
-
-
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -49,7 +33,7 @@ public class Main {
                         System.out.println("There are no books in the inventory");
                 }
                 else{
-                    displayInventory(myList, counter);
+                    Helper.displayInventory(myList, counter);
                 }
                     break;
                 case 2:
