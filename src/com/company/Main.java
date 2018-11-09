@@ -34,7 +34,7 @@ public class Main {
                 }
                     break;
                 case 2:
-                    System.out.println("Class for displaying books by an author");
+                    Helper.displayAuthor(myList, counter);
                     break;
                 case 3:
                         Book newBook = Helper.addBook();
@@ -48,7 +48,9 @@ public class Main {
                     System.out.println("There are currently " + counter + " books in the inventory");
                     break;
                 case 6:
-                    System.out.println("Class total amount of entire research");
+                    System.out.println("Loading sample inventory");
+                    myList = Helper.loadSample();
+                    counter = 5;
                     break;
                 case 7:
                     System.out.println("Have a nice day!");
