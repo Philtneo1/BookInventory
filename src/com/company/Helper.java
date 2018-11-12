@@ -1,3 +1,7 @@
+//Helper.java
+//IS 147 Final Project
+//Oct 29, 2018
+
 package com.company;
 
 import java.util.Scanner;
@@ -32,10 +36,6 @@ public class Helper {
     }
 
     public static Book addBook() {
-
-
-
-        Book creatingBook = new Book();
         Scanner input = new Scanner(System.in);
 
 
@@ -43,19 +43,14 @@ public class Helper {
         String bookName = input.nextLine();
 
 
-
         System.out.println("Who is the author of this book?: ");
         String bookAuthor = input.nextLine();
-
 
 
         System.out.println("How many pages does this book have?: ");
         int bookPages = input.nextInt();
 
-
-        creatingBook.name = bookName;
-        creatingBook.author = bookAuthor;
-        creatingBook.page = bookPages;
+        Book creatingBook = new Book(bookName, bookAuthor, bookPages);
 
         return creatingBook;
 
@@ -76,6 +71,27 @@ public class Helper {
         return;
 
     }
+
+    public static Book[] removeBook(Book[] myList, String removeBookName, int counter)
+    {
+
+        for(int i = 0; i < counter; i++)
+        {
+            if(removeBookName.equals(myList[i].name))
+            {
+                for(int j = i; j < (counter - i); j++ )
+                {
+                    myList[i] = myList[i + 1];
+                }
+                break;
+            }
+
+        }
+
+        return myList;
+
+    }
+
 
     public static void displayAuthor(Book[] myList, int counter) {
         Scanner input = new Scanner(System.in);
@@ -106,30 +122,19 @@ public class Helper {
 
 
     public static Book[] loadSample(){
-        Book sampleBook1 = new Book();
-        Book sampleBook2 = new Book();
-        Book sampleBook3 = new Book();
-        Book sampleBook4 = new Book();
-        Book sampleBook5 = new Book();
+        Book sampleBook1 = new Book("Harry Potter and the Half-Blood Prince","JK Rowling", 607);
+        Book sampleBook2 = new Book("Harry Potter and the Chamber of Secrets", "JK Rowling", 341);
+        Book sampleBook3 = new Book("The Hunger Games", "Suzanne Collins", 374);
+        Book sampleBook4 = new Book("MockingJay", "Suzanne Collins", 390);
+        Book sampleBook5 = new Book("Catching Fire", "Suzanne Collins", 400);
+        Book sampleBook6 = new Book("Eragon", "Christopher Paolini", 544);
+        Book sampleBook7 = new Book("Eldest", "Christopher Paolini", 694);
+        Book sampleBook8 = new Book("Brisingr", "Christopher Paolini", 831);
+        Book sampleBook9 = new Book("Inheritance", "Christopher Paolini", 860);
 
 
-        sampleBook1.name = "Harry Potter and the Half-Blood Prince";
-        sampleBook1.author = "JK Rowling";
-        sampleBook1.page = 607;
-        sampleBook2.name = "Harry Potter and the Chamber of Secrets";
-        sampleBook2.author = "JK Rowling";
-        sampleBook2.page = 341;
-        sampleBook3.name = "The Hunger Games";
-        sampleBook3.author = "Suzanne Collins";
-        sampleBook3.page = 374;
-        sampleBook4.name = "Mockingjay";
-        sampleBook4.author = "Suzanne Collins";
-        sampleBook4.page = 390;
-        sampleBook5.name = "Catching Fire";
-        sampleBook5.author = "Suzanne Collins";
-        sampleBook5.page = 400;
-
-        Book[] temp = {sampleBook1, sampleBook2, sampleBook3, sampleBook4, sampleBook5};
+        Book[] temp = {sampleBook1, sampleBook2, sampleBook3, sampleBook4, sampleBook5,
+                sampleBook6, sampleBook7, sampleBook8, sampleBook9};
         return temp;
 
 

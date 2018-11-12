@@ -20,6 +20,7 @@ public class Main {
         int counter = 0;
 
         Book[] myList = new Book[99];
+        Book[] tempList = new Book[99];
         while (flag) {
 
 
@@ -29,7 +30,7 @@ public class Main {
                     if (counter == 0) {
                         System.out.println("There are no books in the inventory");
                 }
-                else{
+                    else{
                     Helper.displayInventory(myList, counter);
                 }
                     break;
@@ -42,22 +43,46 @@ public class Main {
                         counter++;
                         break;
                 case 4:
-                    System.out.println("Class removing a book!");
+                    int count = 0;
+                    System.out.println("Enter the book you want to remove");
+                    String removeBookName = input.nextLine();
+
+                    for(int i = 0; i < counter; i++)
+                    {
+                        if(removeBookName.equals(myList[i].name))
+                        {
+                            myList = Helper.removeBook(myList, removeBookName, counter);
+                            counter--;
+                            count++;
+                            break;
+                        }
+
+                    }
+
+                    if (count == 0){
+                        System.out.println("Book is not in inventory!");
+                    }
+
                     break;
+
                 case 5:
                     System.out.println("There are currently " + counter + " books in the inventory");
                     break;
                 case 6:
                     System.out.println("Loading sample inventory");
-                    myList = Helper.loadSample();
-                    counter = 5;
+                    tempList = Helper.loadSample();
+
+                    for(int i = 0; i < tempList.length; i++){
+                        myList[counter] = tempList[i];
+                        counter++;
+                    }
                     break;
                 case 7:
                     System.out.println("Have a nice day!");
                     flag = false;
                     break;
                 default:
-                    System.out.println("Invalid Number");
+                    System.out.println("Invalid Choice");
                     break;
             }
         }
