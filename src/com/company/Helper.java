@@ -1,5 +1,5 @@
 //Helper.java
-//IS 147 Final Project
+//IS 147 Final Project - Book Inventory
 //Oct 29, 2018
 
 package com.company;
@@ -8,32 +8,6 @@ import java.util.Scanner;
 
 public class Helper {
 
-    public static int printMenu() {
-
-        Scanner input = new Scanner(System.in);
-        int choice = 0;
-
-        System.out.println("------------------------------");
-        System.out.println("Enter 1 to display the inventory");
-        System.out.println("Enter 2 to display the books by one author");
-        System.out.println("Enter 3 to add a book");
-        System.out.println("Enter 4 to remove a book");
-        System.out.println("Enter 5 to view the total number of books in the inventory");
-        System.out.println("Enter 6 to load a sample book inventory");
-        System.out.println("Enter 7 to exit");
-        try {
-            System.out.println("Enter your choice: ");
-            choice = input.nextInt();
-            return choice;
-
-        }
-        catch(Exception e){
-            System.out.println("Invalid choice!");
-        }
-
-        return choice;
-
-    }
 
     public static Book addBook() {
         Scanner input = new Scanner(System.in);
@@ -57,20 +31,7 @@ public class Helper {
 
     }
 
-    public static void displayInventory(Book[] myList, int counter){
-        System.out.println("***************************");
-        for(int i = 0; i < counter; i++) {
-            System.out.println("");
-            System.out.println("Book Name: " + myList[i].name);
-            System.out.println("Author: " + myList[i].author);
-            System.out.println("Pages: " + myList[i].page);
-            System.out.println("");
 
-        }
-        System.out.println("***************************");
-        return;
-
-    }
 
     public static Book[] removeBook(Book[] myList, String removeBookName, int counter)
     {
@@ -93,32 +54,6 @@ public class Helper {
     }
 
 
-    public static void displayAuthor(Book[] myList, int counter) {
-        Scanner input = new Scanner(System.in);
-        Book creatingBook = new Book();
-
-        System.out.println("Enter the author whose books you want to display: ");
-        String authorName = input.nextLine();
-        Book[] temp = new Book[counter];
-        int anotherCount = 0;
-
-        for (int i = 0; i < counter; i++) {
-            if (authorName.equals(myList[i].author)) {
-                temp[anotherCount] = myList[i];
-                anotherCount++;
-            }
-        }
-
-
-        if (anotherCount > 0) {
-            System.out.println("Author: " + authorName);
-            for (int j = 0; j < anotherCount; j++) {
-                System.out.println("Book Name: " + temp[j].name);
-            }
-
-
-        }
-    }
 
 
     public static Book[] loadSample(){
@@ -131,10 +66,11 @@ public class Helper {
         Book sampleBook7 = new Book("Eldest", "Christopher Paolini", 694);
         Book sampleBook8 = new Book("Brisingr", "Christopher Paolini", 831);
         Book sampleBook9 = new Book("Inheritance", "Christopher Paolini", 860);
+        Book sampleBook10 = new Book("A Game of Thrones", "George RR Martin", 694);
 
 
         Book[] temp = {sampleBook1, sampleBook2, sampleBook3, sampleBook4, sampleBook5,
-                sampleBook6, sampleBook7, sampleBook8, sampleBook9};
+                sampleBook6, sampleBook7, sampleBook8, sampleBook9, sampleBook10};
         return temp;
 
 

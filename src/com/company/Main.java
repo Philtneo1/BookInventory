@@ -1,7 +1,6 @@
-//BookInventory.java
-//IS 147 Final Project
+//Main.java
+//IS 147 Final Project - Book Inventory
 //Oct 29, 2018
-
 
 package com.company;
 
@@ -24,18 +23,18 @@ public class Main {
         while (flag) {
 
 
-            int choice = Helper.printMenu();
+            int choice = Menu.printMenu();
             switch (choice) {
                 case 1:
                     if (counter == 0) {
                         System.out.println("There are no books in the inventory");
                 }
                     else{
-                    Helper.displayInventory(myList, counter);
+                    Display.displayInventory(myList, counter);
                 }
                     break;
                 case 2:
-                    Helper.displayAuthor(myList, counter);
+                    Display.displayAuthor(myList, counter);
                     break;
                 case 3:
                         Book newBook = Helper.addBook();
@@ -69,7 +68,7 @@ public class Main {
                     System.out.println("There are currently " + counter + " books in the inventory");
                     break;
                 case 6:
-                    System.out.println("Loading sample inventory");
+                    System.out.println("Loading samp9le inventory");
                     tempList = Helper.loadSample();
 
                     for(int i = 0; i < tempList.length; i++){

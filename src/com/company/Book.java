@@ -1,5 +1,5 @@
 //Book.java
-//IS 147 Final Project
+//IS 147 Final Project - Book Inventory
 //Oct 29, 2018
 
 package com.company;
