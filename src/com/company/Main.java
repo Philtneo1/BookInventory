@@ -20,6 +20,9 @@ public class Main {
 
         Book[] myList = new Book[99];
         Book[] tempList = new Book[99];
+
+        System.out.println("Book Inventory \n");
+
         while (flag) {
 
 
