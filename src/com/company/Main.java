@@ -68,7 +68,7 @@ public class Main {
                     System.out.println("There are currently " + counter + " books in the inventory");
                     break;
                 case 6:
-                    System.out.println("Loading samp9le inventory");
+                    System.out.println("Loading sample inventory");
                     tempList = Helper.loadSample();
 
                     for(int i = 0; i < tempList.length; i++){
